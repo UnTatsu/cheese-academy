@@ -1,0 +1,418 @@
+/* ここから下に記載していく */
+body{
+    width: 1200px;
+    height: auto;
+    color: #222222;
+    margin: 0;
+}
+
+/* 固定ヘッダーによるリンク先ズレ修正 */
+:root{
+    --header: 120px;
+    scroll-padding: var(--header);    
+}
+
+header{
+    /* ロゴとナビを横並び */
+    display: flex;
+    background-color: white;
+    /* ヘッダーを常時表示 */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 1200px;
+    height: var(--header);
+}
+
+.logoimg{
+    margin: 20px 10px;
+}
+
+.main-footer-warpper{
+    /* ヘッダー以下をスクロール時にヘッダー背面に表示 */
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    /* ヘッダー = 120px */
+    top: 120px;
+    width: 1200px;
+    /* コンテンツ中央揃え */
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+}
+
+nav{
+    /* ナビ項目を左揃え */
+    margin-left: auto;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0 10px;
+}
+
+nav li{
+    flex: 1 0 auto;
+}
+
+nav li a{
+    display: block;
+    padding: 50px 25px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #222222;
+}
+
+nav li a:hover{
+    /* ナビ項目にホバー設定 */
+    background: #ffd61a;
+    border-radius: 10px;
+}
+
+
+.mainvisual{
+    position: relative;
+}
+
+.main-img{
+    width: 1200px;;
+    height: auto;
+}
+
+.mainvisual-writing{
+    /* 位置指定で画像中央にテキスト表示 */
+    position: absolute;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    color: white;
+    line-height: 30px;
+
+    /* なぞの改行を防ぐ */
+    white-space: nowrap;
+}
+
+#mw1{
+    font-size: 44px;
+    font-weight: bold;
+    /* 影付文字 */
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+#mw2{
+    font-size: 32px;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.title-box{
+    margin: 60px auto;
+}
+
+.title-box-a{
+    margin: 0 auto 60px auto;
+}
+
+.lh1em{
+    padding-bottom: 1em;
+}
+
+.lh16px{
+    padding-bottom: 16px;
+}
+
+.lh24px{
+    padding-bottom: 24px;
+}
+
+.lh30px{
+    padding-bottom: 30px;
+}
+
+.lh40px{
+    padding-bottom: 40px;
+}
+
+
+
+#about{
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd61a;
+    padding: 0 0 30px 0;
+}
+
+#course{
+    font-size: 24px;
+    font-weight: bold;
+    color: #222222;
+    padding: 0 0 30px 0;
+}
+
+#news{
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd61a;
+    padding: 0 0 30px 0;
+}
+
+#access{
+    font-size: 24px;
+    font-weight: bold;
+    color: #222222;
+    padding: 0 0 30px 0;
+}
+
+#contact{
+    font-size: 24px;
+    font-weight: bold;
+    color: #222222;
+    padding: 0 0 30px 0;
+}
+
+.japanese-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* スクロールアニメーション設定 */
+@keyframes infinity-scroll-left{
+    form{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.about-img-flex{
+    margin: 60px auto 0 auto;
+}
+
+.about-img-flex-warp{
+    display: flex;
+    overflow: hidden;
+}
+
+.about-img-flex-ltol{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    /* アニメーション */
+    animation: infinity-scroll-left 60s infinite linear 0.5s both;
+}
+
+.about-img{
+    width: calc(100vw / 8);
+}
+
+.about-img>img{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.course-box{
+    display: flex;
+}
+
+
+/* course-boxの偶数番のみ指定 */
+.course-box:nth-child(odd){
+    display: flex;
+    /* 画像とテキストを交互に表示 */
+    flex-direction: row-reverse;
+}
+
+.course-box li{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.course-box:nth-child(odd) li{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.course-img{
+    width: 600px;
+    height: auto;
+}
+
+ .card-r{
+    flex-flow: column;
+    text-align: left;
+    width: 600px;
+    height: auto;
+    background-color: #fafafa;
+    /* 縦方向中央 */
+    display: grid;
+    align-content: center;
+    padding: 0 0 0 50px;
+ }  
+
+ .card-l{
+    text-align: left;
+    width: 600px;
+    height: auto;
+    background-color: #fafafa;
+    display: grid;
+    align-content: center;
+    /* 右寄せ */
+    justify-content: end;
+    padding: 0 50px 0 0 ;
+ }  
+
+ .course-title{
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+
+.accesstbl{
+    border-collapse: collapse;
+    margin: 60px auto 0 auto;
+}
+
+.accesstbl th{ 
+    text-align: left;
+    vertical-align: middle;
+    padding: 0 80px 30px 0
+}
+
+.accesstbl td{
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 0 0 30px 0;
+}
+
+.news-topics{
+    display: flex;
+    justify-content: center;
+}
+
+.news-topic1{
+    text-align: left;
+    letter-spacing: -0.11em;
+    margin: 0 15px;
+    /* カーソルの変更 */
+    cursor: pointer;
+}
+
+.news-topicimg{
+    width: 300px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.news-topic1:hover{
+    border: 5px solid #ffd61a;
+    background-color: #ffd61a;
+}
+
+.more-btn{
+    width: 300px;
+    height: 60px;
+    background-color: #ffd61a;
+    border: 1px #cacaca;
+    margin: 60px auto;
+    /* 角を丸める */
+    /* border-radius: 10px; */
+    font-weight: bold;
+    font-size: 18px;
+    color: whitesmoke;
+    /* カーソルの変更 */
+    cursor: pointer;
+}
+
+/* hoverを設定する */
+.more-btn:hover{
+    background-color:   gray;
+}
+
+.access-content{
+    background-color: #fafafa;
+    padding: 60px 0 30px 0;
+}
+
+.form-btn{
+    width: 300px;
+    height: 60px;
+    background-color: #ffd61a;
+    margin: 30px auto 140px auto;
+    border: 1px #cacaca;
+    /* 角を丸める */
+    /* border-radius: 10px; */
+    font-weight: bold;
+    font-size: 18px;
+    color: whitesmoke;
+    /* カーソルの変更 */
+    cursor: pointer;
+}
+
+/* hoverを設定する */
+.form-btn:hover{
+    background-color:   gray;
+}
+
+/* 入力中の箇所を色付け */
+input:focus, textarea:focus{
+    background: #f8ebb2;
+}
+
+
+
+form{
+    text-align: center;
+}
+
+.formtbl{
+    border-collapse: collapse;
+    margin: 70px auto 0px auto;
+    border-top: 2px solid #bfbfbf;
+}
+
+.formtbl th{
+    text-align: left;
+    vertical-align: middle;
+    width: auto;
+    padding: 8px 64px 8px 16px;
+    font-weight: normal;
+    border-bottom: 1px solid #bfbfbf;
+    border-right: 1px solid #bfbfbf;
+}
+
+.formtbl td{ 
+    text-align: left;
+    vertical-align: middle;
+    width: 400px;
+    padding: 8px;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+input[type=text],input[type=email], select{
+    font-size: 16px;
+    width: 328px;
+    height: 32px;
+}
+
+textarea{
+    font-size: 16px;
+    width: 328px;
+    height: 156px;
+}
+
+.footer-content{
+    padding: 30px;
+    background: #707070;
+    color: white;
+}
